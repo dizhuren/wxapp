@@ -1,0 +1,78 @@
+<scroll-view>
+  <view> 
+    <view class="first_line_view">
+      <text class='first_line_view_left' >选图片</text>
+      <button class='first_line_view_right' size='mini' bindtap="onScreenShot">+自定义拍照</button>
+    </view>
+
+    <view class='second_line_view'>
+      <view class='second_line_left' style='width:30%;'>
+        <text class='section_first_view_left' style='font-size: 20rpx;'>箭头向上.png</text>
+          <picker-view indicator-style="height: 30rpx;"style="height: 250rpx;" bindchange="onChangeKey">
+              <picker-view-column>
+                  <view wx:for="{{map_selecttype}}" wx:key="{{index}}" style="line-height: 30px; text-align: center;">{{index}}</view>
+              </picker-view-column>
+          </picker-view>
+        <text class='section_first_view_left' style='font-size: 20rpx;'>箭头向下.png</text>
+      </view>
+
+      <view class='second_line_right' > 
+        <view style='font-size: 20rpx;'>图</view>
+        <scroll-view bindscroll="scroll" scroll-x="true" class='second_line_right_scroll'>
+            <view class='second_line_right_sroll_item_view' wx:for="{{current_selecttype_valuelist}}" wx:key="{{index}}">
+              <image src="{{item}}" style="height: 60px; width:60px;" bindtap="selectImage" id="{{item}}"></image>
+            </view>
+        </scroll-view> 
+        <view style='font-size: 20rpx;'>图</view>
+      </view>     
+    </view>
+  </view>
+
+  <view style='BackGround-color:Gray; height:10%; width:100% ;border:gray solid 15rpx'></view>
+
+  <view class='chink_select_view'>
+    <button class='chink_button_view' bindtap="selectchink" wx:for="{{cureent_chink_size_buttom}}" wx:key="{{index}}" id="{{index}}">
+      <text style='font-size:22rpx'>{{item}}</text>
+    </button>
+  </view>
+
+  <view class='chink_image'>
+    <view wx:for="{{image_index_array}}" wx:key="{{index}}" class='chink_image_data' style='height:{{current_select_image_size}}rpx; width:{{current_select_image_size}}rpx; order:{{item}}'>
+      <image src="{{current_selecttype_valuelist_data}}" class='second_line_right_sroll_item'></image>
+    </view>
+    <view wx:for="{{chink_index_array_col}}" wx:key="{{index}}" 
+          style='width:{{current_select_chink_size}}rpx; height:{{current_select_image_size}}rpx; order:{{item}};background-color:{{current_select_chink}}'>
+    </view>  
+    <view wx:for="{{chink_index_array_row}}" wx:key="{{index}}" 
+          style='height:{{current_select_chink_size}}rpx; width:{{720/3}}rpx; order:{{item}}; background-color:{{current_select_chink}}'>
+    </view>
+
+    <!-- <view style='width:10rpx;height:220rpx; background-color:gray'></view> -->
+  </view>
+
+  <view style='BackGround-color:Gray; height:10%; width:100% ;border:gray solid 15rpx'></view>
+
+
+  <view class='third_view'>
+    <text class='first_line_view_left'>缝隙颜色</text>
+    <view style='width:70%;'></view>
+    <view class='second_line_left' style='width:30%;'>
+        <text class='section_first_view_left' style='font-size: 20rpx;'>箭头向上.png</text>
+          <picker-view indicator-style="height: 30rpx;"style="height: 250rpx;" bindchange="onChangeColorKey">
+              <picker-view-column>
+                  <view wx:for="{{map_colortype}}" wx:key="{{index}}" style="line-height: 30px; text-align: center;">{{index}}</view>
+              </picker-view-column>
+          </picker-view>
+        <text class='section_first_view_left' style='font-size: 20rpx;'>箭头向下.png</text>
+    </view>
+    <view style='width:70%;'> 
+      <scroll-view class='second_line_left'>
+          <view  bindtap="selectchinkcolor" id="{{index}}" wx:for="{{current_colortype_valuelist}}" wx:key="{{index}}" style='background-color:{{item}}'>
+          {{item}}</view>
+      </scroll-view> 
+    </view>
+  </view>
+</scroll-view>
+
+
+

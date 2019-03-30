@@ -1,0 +1,100 @@
+@import "../common/lib/weui.wxss";
+
+.first_line_view {
+  display: flex;
+  flex-direction: row;
+  margin: 10%;
+
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.first_line_view_left{
+   width: 30%;
+   text-align:center;
+   background-color:darkgoldenrod;
+   border-radius: 98rpx;
+}
+
+.first_line_view_right{
+   width: 45%;
+   margin-left: 60rpx;
+   background-color:darkgoldenrod;
+}
+
+.second_line_view{
+  display: flex;
+  flex-direction: row;
+  margin: 50rpx;
+  flex-wrap:wrap;
+  width: 100%;
+
+}
+
+.second_line_left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  text-align: center;
+
+}
+
+.second_line_right{
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+}
+
+.second_line_right_scroll{
+  white-space: nowrap;
+  width:60px; 
+}
+
+.second_line_right_sroll_item_view{
+  display: inline-block;
+  text-align: center;
+}
+
+.second_line_right_sroll_item {
+   height: 100%; 
+   width: 100%; 
+}
+
+
+
+.chink_select_view {
+  display: flex;
+  flex-direction: row;
+  margin: 60rpx;
+  height: 120rpx;
+}
+
+.chink_button_view{
+  display: flex;
+}
+
+
+.chink_image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin: 15rpx;
+  width: 720rpx;
+  height: 720rpx;
+   /*flex-start 解决有缝隙问题*/
+  align-content:flex-start;
+}
+
+
+.chink_image_data{
+ background-color:red;
+}
+
+
+.third_view{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin: 10%
+}
